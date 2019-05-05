@@ -1,0 +1,7 @@
+# XCode
+SubtitleEditor.xcodeproj/*
+!SubtitleEditor.xcodeproj/project.pbxproj
+
+# Files
+.DS_Store
+
