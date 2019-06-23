@@ -22,6 +22,8 @@ class MainViewController: NSViewController {
 
         switch result {
         case .OK:
+            self.view.window!.title = openPanel.url!.lastPathComponent
+
             subtitleViewModel.setItems(items: fileViewModel.loadFromFile(filePath: openPanel.url!, encoding: fileOpenEncoding(stringEncoding: sender.title)))
             tableView.reloadData()
             break
