@@ -68,16 +68,28 @@
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <menu key="submenu" title="Open with Encoding" id="pGV-5v-CFM">
                                                 <items>
-                                                    <menuItem title="Windows-1250" id="ceO-pt-k8r">
+                                                    <menuItem title="ISO-8859-1" id="tSL-uz-sTF">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
                                                         <connections>
-                                                            <action selector="fileOpen:" target="Ady-hI-5gd" id="ftW-g2-OQ7"/>
+                                                            <action selector="fileOpen:" target="Ady-hI-5gd" id="U44-Dy-2wr"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                    <menuItem title="ISO-8859-2" id="TIF-P7-WCY">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="fileOpen:" target="Ady-hI-5gd" id="8TJ-Mx-Xhx"/>
                                                         </connections>
                                                     </menuItem>
                                                     <menuItem title="UTF-8" id="HNO-sc-lka">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
                                                         <connections>
                                                             <action selector="fileOpen:" target="Ady-hI-5gd" id="VIg-gN-PBc"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                    <menuItem title="Windows-1250" id="ceO-pt-k8r">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="fileOpen:" target="Ady-hI-5gd" id="ftW-g2-OQ7"/>
                                                         </connections>
                                                     </menuItem>
                                                 </items>
@@ -149,6 +161,8 @@ CA
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SubtitleEditor" customModuleProvider="target">
                     <connections>
+                        <outlet property="openWithEncodingIso88591" destination="tSL-uz-sTF" id="WeT-ho-Xqn"/>
+                        <outlet property="openWithEncodingIso88592" destination="TIF-P7-WCY" id="xqt-dA-4PY"/>
                         <outlet property="openWithEncodingUtf8" destination="HNO-sc-lka" id="Xdo-u3-hSe"/>
                         <outlet property="openWithEncodingWindows1250" destination="ceO-pt-k8r" id="14J-EN-qXO"/>
                     </connections>

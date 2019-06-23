@@ -19,7 +19,7 @@ class MainViewController: NSViewController {
         openPanel.canChooseFiles = true
         
         let result = openPanel.runModal()
-        
+
         switch result {
         case .OK:
             subtitleViewModel.setItems(items: fileViewModel.loadFromFile(filePath: openPanel.url!, encoding: fileOpenEncoding(stringEncoding: sender.title)))
@@ -58,11 +58,17 @@ class MainViewController: NSViewController {
         let encoding: String.Encoding
         
         switch stringEncoding.uppercased() {
-        case app.openWithEncodingWindows1250.title.uppercased():
-            encoding = .windowsCP1250
+        case app.openWithEncodingIso88591.title.uppercased():
+            encoding = .isoLatin1
+            break
+        case app.openWithEncodingIso88592.title.uppercased():
+            encoding = .isoLatin2
             break
         case app.openWithEncodingUtf8.title.uppercased():
             encoding = .utf8
+            break
+        case app.openWithEncodingWindows1250.title.uppercased():
+            encoding = .windowsCP1250
             break
         default:
             encoding = .utf8
