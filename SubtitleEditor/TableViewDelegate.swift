@@ -17,28 +17,31 @@ extension MainViewController: NSTableViewDelegate {
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let tableCellView = tableView.makeView(withIdentifier: tableColumn!.identifier, owner: self) as? NSTableCellView
-        if (tableCellView == nil) {
-            return nil
-        }
+        let tableCellView = tableView.makeView(withIdentifier: tableColumn!.identifier, owner: self) as! NSTableCellView
         
         switch tableColumn?.title {
         case Columns.Sequence:
-            tableCellView!.textField?.stringValue = String(subtitleViewModel.items[row].sequence)
+            tableCellView.textField?.stringValue = String(subtitleViewModel.items[row].sequence)
             break
         case Columns.BeginTime:
-            tableCellView!.textField?.stringValue = String(describing: subtitleViewModel.items[row].beginTime)
+            tableCellView.textField?.stringValue = String(describing: subtitleViewModel.items[row].beginTime)
             break
         case Columns.EndTime:
-            tableCellView!.textField?.stringValue = String(describing: subtitleViewModel.items[row].endTime)
+            tableCellView.textField?.stringValue = String(describing: subtitleViewModel.items[row].endTime)
             break
         case Columns.Text:
-            tableCellView!.textField?.stringValue = subtitleViewModel.items[row].text
+            tableCellView.textField?.stringValue = subtitleViewModel.items[row].text
             break
         default:
             break
         }
         
         return tableCellView
+    }
+    
+    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        let numberOfLines = subtitleViewModel.items[row].text.filter { $0 == "\n" }.count + 1
+        
+        return CGFloat(numberOfLines) * tableView.rowHeight
     }
 }
