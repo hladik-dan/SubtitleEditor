@@ -45,6 +45,16 @@ class MainViewController: NSViewController {
         self.performSegue(withIdentifier: "ShiftSegue", sender: self)
     }
     
+    @IBAction func onTextEdit(_ sender: NSTextFieldCell) {
+        let row = tableView.selectedRow
+        if (row == -1) {
+            return
+        }
+        
+        subtitleViewModel.items[row].setText(text: sender.stringValue)
+        tableView.noteHeightOfRows(withIndexesChanged: [row])
+    }
+    
     let app = NSApplication.shared.delegate as! AppDelegate
     let fileViewModel = FileViewModel()
     let subtitleViewModel = SubtitleViewModel()
