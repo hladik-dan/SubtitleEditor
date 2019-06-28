@@ -46,7 +46,7 @@ class ShiftViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        timeFormatter.useSign(useSign: true)
+        timeFormatter.useSign(true)
         timeTextField.stringValue = timeFormatter.string(for: timeStepper.integerValue)!
     }
     

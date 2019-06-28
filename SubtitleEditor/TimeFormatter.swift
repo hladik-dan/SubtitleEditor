@@ -29,17 +29,17 @@ class TimeFormatter: Formatter {
         var string = String(format: "%02i:%02i:%02i,%03i", hours, minutes, seconds, milliseconds)
         
         if useSign {
-            string = getSign(value: value) + string
+            string = getSign(value) + string
         }
         
         return string
     }
     
-    func useSign(useSign: Bool) {
+    func useSign(_ useSign: Bool) {
         self.useSign = useSign
     }
     
-    private func getSign(value: Int) -> String {
+    private func getSign(_ value: Int) -> String {
         if value > 0 {
             return "+"
         }

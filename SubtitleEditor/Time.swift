@@ -34,8 +34,6 @@ class Time: CustomStringConvertible, Equatable {
     private(set) var description: String
     
     init(hours: Int = 0, minutes: Int = 0, seconds: Int = 0, milliseconds: Int = 0) {
-        precondition(((hours >= 0) && (minutes >= 0) && (seconds >= 0) && (milliseconds >= 0)) || ((hours <= 0) && (minutes <= 0) && (seconds <= 0) && (milliseconds <= 0)), "All values have to be either positive or negative!")
-        
         self.hours = hours
         self.minutes = minutes
         self.seconds = seconds
