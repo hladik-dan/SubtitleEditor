@@ -17,7 +17,7 @@ class TimeTests: XCTestCase {
     override func tearDown() {
     }
     
-    func testConstructor1() {
+    func testConstructor_PositiveTime() {
         let time = Time(milliseconds: 12345678)
         
         XCTAssertEqual(time.hours, 3)
@@ -26,7 +26,7 @@ class TimeTests: XCTestCase {
         XCTAssertEqual(time.milliseconds, 678)
     }
     
-    func testConstructor2() {
+    func testConstructor_NegativeTime() {
         let time = Time(milliseconds: -12345678)
         
         XCTAssertEqual(time.hours, -3)

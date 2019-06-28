@@ -16,7 +16,7 @@ class SubtitleViewModelTests: XCTestCase {
     override func tearDown() {
     }
     
-    func testRemove() {
+    func testRemoveItems() {
         let item1 = Item(sequence: 1, beginTime: Time(milliseconds: 1), endTime: Time(milliseconds: 2), text: "TEXT-1")
         let item2 = Item(sequence: 2, beginTime: Time(milliseconds: 3), endTime: Time(milliseconds: 4), text: "TEXT-2")
         let item3 = Item(sequence: 3, beginTime: Time(milliseconds: 5), endTime: Time(milliseconds: 6), text: "TEXT-3")
@@ -24,11 +24,24 @@ class SubtitleViewModelTests: XCTestCase {
         
         let viewModel = SubtitleViewModel()
         viewModel.setItems(items: items)
-        viewModel.remove(indexSet: IndexSet(0...1))
+        viewModel.removeItems(indexSet: IndexSet(0...1))
         
         XCTAssertFalse(viewModel.items.contains { $0 == item1 })
         XCTAssertFalse(viewModel.items.contains { $0 == item2 })
         XCTAssertTrue(viewModel.items.contains { $0 == item3 })
+    }
+    
+    func testRemoveAllItems() {
+        let item1 = Item(sequence: 1, beginTime: Time(milliseconds: 1), endTime: Time(milliseconds: 2), text: "TEXT-1")
+        let item2 = Item(sequence: 2, beginTime: Time(milliseconds: 3), endTime: Time(milliseconds: 4), text: "TEXT-2")
+        let item3 = Item(sequence: 3, beginTime: Time(milliseconds: 5), endTime: Time(milliseconds: 6), text: "TEXT-3")
+        let items = [item1, item2, item3]
+        
+        let viewModel = SubtitleViewModel()
+        viewModel.setItems(items: items)
+        viewModel.removeAllItems()
+        
+        XCTAssertTrue(viewModel.items.isEmpty)
     }
     
     func testSetItems() {
