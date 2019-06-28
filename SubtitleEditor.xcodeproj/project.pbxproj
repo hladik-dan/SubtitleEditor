@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73246ADF22C6764E003725C2 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73246ADE22C6764E003725C2 /* MainWindowController.swift */; };
 		737B234E21C7D82C0068CBFC /* SubtitleViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B234D21C7D82C0068CBFC /* SubtitleViewModelTests.swift */; };
 		737B235021C7E2A10068CBFC /* FileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B234F21C7E2A10068CBFC /* FileViewModelTests.swift */; };
 		73A379E521BDB56100E0C967 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A379E421BDB56100E0C967 /* AppDelegate.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		73246ADE22C6764E003725C2 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		737B234D21C7D82C0068CBFC /* SubtitleViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleViewModelTests.swift; sourceTree = "<group>"; };
 		737B234F21C7E2A10068CBFC /* FileViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileViewModelTests.swift; sourceTree = "<group>"; };
 		73A379E121BDB56100E0C967 /* SubtitleEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubtitleEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				73A379E421BDB56100E0C967 /* AppDelegate.swift */,
+				73246ADE22C6764E003725C2 /* MainWindowController.swift */,
 				73A379E621BDB56100E0C967 /* MainViewController.swift */,
 				73A379E821BDB56100E0C967 /* Assets.xcassets */,
 				73A379EA21BDB56100E0C967 /* Main.storyboard */,
@@ -245,6 +248,7 @@
 				73A37A0521BDBACD00E0C967 /* Item.swift in Sources */,
 				73A379E721BDB56100E0C967 /* MainViewController.swift in Sources */,
 				73A37A0721BDBAE900E0C967 /* Time.swift in Sources */,
+				73246ADF22C6764E003725C2 /* MainWindowController.swift in Sources */,
 				73A37A0321BDBA3400E0C967 /* FileViewModel.swift in Sources */,
 				73A379E521BDB56100E0C967 /* AppDelegate.swift in Sources */,
 			);

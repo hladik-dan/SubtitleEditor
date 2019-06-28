@@ -29,7 +29,7 @@ class MainViewController: NSViewController {
                 subtitleViewModel.setItems(items: items)
                 tableView.reloadData()
                 
-                self.view.window!.title = openPanel.url!.lastPathComponent
+                mainWindowController.setTitle(title: openPanel.url!.lastPathComponent)
             } catch {
                 let alert = NSAlert()
                 alert.alertStyle = .warning
@@ -49,8 +49,15 @@ class MainViewController: NSViewController {
         fileViewModel.saveToFile(filePath: fileViewModel.filePath!, items: subtitleViewModel.items)
     }
     
+    @IBAction func fileClose(_ sender: Any) {
+        subtitleViewModel.removeAllItems()
+        tableView.reloadData()
+        
+        mainWindowController.resetTitle()
+    }
+    
     @IBAction func removeSubtitles(_ sender: Any) {
-        subtitleViewModel.remove(indexSet: tableView.selectedRowIndexes)
+        subtitleViewModel.removeItems(indexSet: tableView.selectedRowIndexes)
         tableView.reloadData()
     }
     
@@ -72,11 +79,19 @@ class MainViewController: NSViewController {
     let fileViewModel = FileViewModel()
     let subtitleViewModel = SubtitleViewModel()
     
+    var mainWindowController: MainWindowController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+    }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        
+        self.mainWindowController = (self.view.window!.windowController as! MainWindowController)
     }
     
     private func fileOpenEncoding(stringEncoding: String) -> String.Encoding {

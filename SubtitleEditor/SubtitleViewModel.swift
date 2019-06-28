@@ -22,13 +22,17 @@ class SubtitleViewModel {
         }
     }
     
-    func remove(indexSet: IndexSet) {
+    func removeItems(indexSet: IndexSet) {
         for (offset, index) in indexSet.enumerated() {
-            remove(index: index - offset)
+            removeItem(index: index - offset)
         }
     }
     
-    private func remove(index: Int) {
+    func removeAllItems() {
+        items.removeAll()
+    }
+    
+    private func removeItem(index: Int) {
         items.remove(at: index)
         
         for item in items[index...] {
