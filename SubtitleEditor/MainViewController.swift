@@ -22,10 +22,23 @@ class MainViewController: NSViewController {
 
         switch result {
         case .OK:
-            self.view.window!.title = openPanel.url!.lastPathComponent
-
-            subtitleViewModel.setItems(items: fileViewModel.loadFromFile(filePath: openPanel.url!, encoding: fileOpenEncoding(stringEncoding: sender.title)))
-            tableView.reloadData()
+            do {
+                let encoding = fileOpenEncoding(stringEncoding: sender.title)
+                let items = try fileViewModel.loadFromFile(filePath: openPanel.url!, encoding: encoding)
+                
+                subtitleViewModel.setItems(items: items)
+                tableView.reloadData()
+                
+                self.view.window!.title = openPanel.url!.lastPathComponent
+            } catch {
+                let alert = NSAlert()
+                alert.alertStyle = .warning
+                alert.messageText = error.localizedDescription
+                alert.addButton(withTitle: "OK")
+                
+                alert.runModal()
+            }
+            
             break
         default:
             break

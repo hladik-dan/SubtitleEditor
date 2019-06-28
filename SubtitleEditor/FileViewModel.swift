@@ -11,7 +11,7 @@ import Cocoa
 class FileViewModel {
     var filePath: URL?
     
-    func loadFromFile(filePath: URL, encoding: String.Encoding = .utf8) -> [Item] {
+    func loadFromFile(filePath: URL, encoding: String.Encoding = .utf8) throws -> [Item] {
         var items: [Item] = []
         
         do {
@@ -37,7 +37,7 @@ class FileViewModel {
             
             self.filePath = filePath
         } catch {
-            print(error)
+            throw error
         }
         
         return items
