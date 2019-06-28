@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		73246ADF22C6764E003725C2 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73246ADE22C6764E003725C2 /* MainWindowController.swift */; };
+		73246AE122C6A914003725C2 /* TimeFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73246AE022C6A914003725C2 /* TimeFormatterTests.swift */; };
 		737B234E21C7D82C0068CBFC /* SubtitleViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B234D21C7D82C0068CBFC /* SubtitleViewModelTests.swift */; };
 		737B235021C7E2A10068CBFC /* FileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B234F21C7E2A10068CBFC /* FileViewModelTests.swift */; };
 		73A379E521BDB56100E0C967 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A379E421BDB56100E0C967 /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		73246ADE22C6764E003725C2 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		73246AE022C6A914003725C2 /* TimeFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatterTests.swift; sourceTree = "<group>"; };
 		737B234D21C7D82C0068CBFC /* SubtitleViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleViewModelTests.swift; sourceTree = "<group>"; };
 		737B234F21C7E2A10068CBFC /* FileViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileViewModelTests.swift; sourceTree = "<group>"; };
 		73A379E121BDB56100E0C967 /* SubtitleEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubtitleEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 				73D02C1921C68DFB00990343 /* ItemTests.swift */,
 				737B234D21C7D82C0068CBFC /* SubtitleViewModelTests.swift */,
 				737B234F21C7E2A10068CBFC /* FileViewModelTests.swift */,
+				73246AE022C6A914003725C2 /* TimeFormatterTests.swift */,
 			);
 			path = SubtitleEditorTests;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				737B234E21C7D82C0068CBFC /* SubtitleViewModelTests.swift in Sources */,
 				73D02C1A21C68DFB00990343 /* ItemTests.swift in Sources */,
 				737B235021C7E2A10068CBFC /* FileViewModelTests.swift in Sources */,
+				73246AE122C6A914003725C2 /* TimeFormatterTests.swift in Sources */,
 				73D02C1821C5E01900990343 /* TimeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
