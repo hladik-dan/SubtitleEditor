@@ -11,7 +11,7 @@ import Cocoa
 class SubtitleViewModel {
     private(set) var items: [Item] = []
     
-    func setItems(items: [Item]) {
+    func setItems(_ items: [Item]) {
         self.items = items
     }
     

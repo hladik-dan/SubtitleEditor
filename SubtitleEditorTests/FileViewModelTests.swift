@@ -46,14 +46,14 @@ class FileViewModelTests: XCTestCase {
     
     func testLoadFromFile_UTF8() {
         let viewModel = FileViewModel()
-        let result = try! viewModel.loadFromFile(filePath: filePath_UTF8)
+        let result = try! viewModel.loadFromFile(filePath_UTF8)
         
         XCTAssertEqual(result.count, 2)
     }
     
     func testLoadFromFile_Windows1250() {
         let viewModel = FileViewModel()
-        let result = try! viewModel.loadFromFile(filePath: filePath_Windows1250, encoding: .windowsCP1250)
+        let result = try! viewModel.loadFromFile(filePath_Windows1250, encoding: .windowsCP1250)
         
         XCTAssertEqual(result.count, 2)
     }
@@ -62,13 +62,13 @@ class FileViewModelTests: XCTestCase {
         let nonExistingFilePath = URL(fileURLWithPath: "nonExistingFile.txt")
         let viewModel = FileViewModel()
         
-        XCTAssertThrowsError(try viewModel.loadFromFile(filePath: nonExistingFilePath))
+        XCTAssertThrowsError(try viewModel.loadFromFile(nonExistingFilePath))
     }
     
     func testLoadFromFile_WrongEncoding() {
         let viewModel = FileViewModel()
         
-        XCTAssertThrowsError(try viewModel.loadFromFile(filePath: filePath_Windows1250))
+        XCTAssertThrowsError(try viewModel.loadFromFile(filePath_Windows1250))
     }
     
     func testSaveToFile() {
@@ -77,7 +77,7 @@ class FileViewModelTests: XCTestCase {
         let items = [item1, item2]
         
         let viewModel = FileViewModel()
-        viewModel.saveToFile(filePath: filePath_UTF8, items: items)
+        viewModel.saveToFile(filePath_UTF8, items: items)
         
         var content = ""
         content += "1\n"

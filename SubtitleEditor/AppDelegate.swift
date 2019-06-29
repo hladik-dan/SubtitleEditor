@@ -14,7 +14,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var openWithEncodingIso88592: NSMenuItem!
     @IBOutlet weak var openWithEncodingUtf8: NSMenuItem!
     @IBOutlet weak var openWithEncodingWindows1250: NSMenuItem!
-
+    @IBOutlet weak var save: NSMenuItem!
+    @IBOutlet weak var revertToSaved: NSMenuItem!
+    
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true
     }

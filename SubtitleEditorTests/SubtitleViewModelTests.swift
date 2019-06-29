@@ -23,7 +23,7 @@ class SubtitleViewModelTests: XCTestCase {
         let items = [item1, item2, item3]
         
         let viewModel = SubtitleViewModel()
-        viewModel.setItems(items: items)
+        viewModel.setItems(items)
         viewModel.removeItems(indexSet: IndexSet(0...1))
         
         XCTAssertFalse(viewModel.items.contains { $0 == item1 })
@@ -38,7 +38,7 @@ class SubtitleViewModelTests: XCTestCase {
         let items = [item1, item2, item3]
         
         let viewModel = SubtitleViewModel()
-        viewModel.setItems(items: items)
+        viewModel.setItems(items)
         viewModel.removeAllItems()
         
         XCTAssertTrue(viewModel.items.isEmpty)
@@ -51,7 +51,7 @@ class SubtitleViewModelTests: XCTestCase {
         let items = [item1, item2]
         
         let viewModel = SubtitleViewModel()
-        viewModel.setItems(items: items)
+        viewModel.setItems(items)
         
         XCTAssertTrue(viewModel.items.contains { $0 == item1 })
         XCTAssertTrue(viewModel.items.contains { $0 == item2 })
@@ -68,7 +68,7 @@ class SubtitleViewModelTests: XCTestCase {
         let milliseconds = 10
         
         let viewModel = SubtitleViewModel()
-        viewModel.setItems(items: [item1, item2])
+        viewModel.setItems([item1, item2])
         viewModel.shift(indexSet: indexSet, milliseconds: milliseconds)
         
         XCTAssertEqual(viewModel.items[0].beginTime.toMilliseconds(), (item1BeginTime + milliseconds))

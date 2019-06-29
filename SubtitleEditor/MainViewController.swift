@@ -24,12 +24,14 @@ class MainViewController: NSViewController {
         case .OK:
             do {
                 let encoding = fileOpenEncoding(stringEncoding: sender.title)
-                let items = try fileViewModel.loadFromFile(filePath: openPanel.url!, encoding: encoding)
+                let items = try fileViewModel.loadFromFile(openPanel.url!, encoding: encoding)
                 
-                subtitleViewModel.setItems(items: items)
+                subtitleViewModel.setItems(items)
                 tableView.reloadData()
                 
                 mainWindowController.setTitle(title: openPanel.url!.lastPathComponent)
+                app.save.isEnabled = true
+                app.revertToSaved.isEnabled = true
             } catch {
                 let alert = NSAlert()
                 alert.alertStyle = .warning
@@ -45,23 +47,34 @@ class MainViewController: NSViewController {
         }
     }
     
-    @IBAction func fileSave(_ sender: Any) {
-        fileViewModel.saveToFile(filePath: fileViewModel.filePath!, items: subtitleViewModel.items)
+    @IBAction func fileSave(_ sender: NSMenuItem) {
+        fileViewModel.saveToFile(fileViewModel.filePath!, items: subtitleViewModel.items)
     }
     
-    @IBAction func fileClose(_ sender: Any) {
+    @IBAction func fileRevertToSaved(_ sender: NSMenuItem) {
+        let filePath = fileViewModel.filePath!
+        let encoding = fileViewModel.encoding!
+        let items = try! fileViewModel.loadFromFile(filePath, encoding: encoding)
+        
+        subtitleViewModel.setItems(items)
+        tableView.reloadData()
+    }
+    
+    @IBAction func fileClose(_ sender: NSMenuItem) {
         subtitleViewModel.removeAllItems()
         tableView.reloadData()
         
         mainWindowController.resetTitle()
+        app.revertToSaved.isEnabled = false
+        app.save.isEnabled = false
     }
     
-    @IBAction func removeSubtitles(_ sender: Any) {
+    @IBAction func removeSubtitles(_ sender: NSMenuItem) {
         subtitleViewModel.removeItems(indexSet: tableView.selectedRowIndexes)
         tableView.reloadData()
     }
     
-    @IBAction func shiftSubtitles(_ sender: Any) {
+    @IBAction func shiftSubtitles(_ sender: NSMenuItem) {
         self.performSegue(withIdentifier: "ShiftSegue", sender: self)
     }
     

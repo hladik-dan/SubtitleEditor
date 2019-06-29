@@ -10,8 +10,9 @@ import Cocoa
 
 class FileViewModel {
     var filePath: URL?
+    var encoding: String.Encoding?
     
-    func loadFromFile(filePath: URL, encoding: String.Encoding = .utf8) throws -> [Item] {
+    func loadFromFile(_ filePath: URL, encoding: String.Encoding = .utf8) throws -> [Item] {
         var items: [Item] = []
         
         do {
@@ -36,6 +37,7 @@ class FileViewModel {
             }
             
             self.filePath = filePath
+            self.encoding = encoding
         } catch {
             throw error
         }
@@ -43,7 +45,7 @@ class FileViewModel {
         return items
     }
     
-    func saveToFile(filePath: URL, items: [Item]) {
+    func saveToFile(_ filePath: URL, items: [Item]) {
         var content = ""
         
         for item in items {

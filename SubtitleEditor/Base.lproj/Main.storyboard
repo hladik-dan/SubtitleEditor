@@ -57,7 +57,7 @@
                             </menuItem>
                             <menuItem title="File" id="dMs-cI-mzQ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="File" id="bib-Uj-vzu">
+                                <menu key="submenu" title="File" autoenablesItems="NO" id="bib-Uj-vzu">
                                     <items>
                                         <menuItem title="Open" keyEquivalent="o" id="IAo-SY-fd9">
                                             <connections>
@@ -109,7 +109,7 @@
                                             </menu>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
-                                        <menuItem title="Save" keyEquivalent="s" id="pxx-59-PXV">
+                                        <menuItem title="Save" enabled="NO" keyEquivalent="s" id="pxx-59-PXV">
                                             <connections>
                                                 <action selector="fileSave:" target="Ady-hI-5gd" id="iaF-aB-CCF"/>
                                             </connections>
@@ -119,9 +119,9 @@
                                                 <action selector="saveDocumentAs:" target="Ady-hI-5gd" id="mDf-zr-I0C"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Revert to Saved" hidden="YES" enabled="NO" keyEquivalent="r" id="KaW-ft-85H">
+                                        <menuItem title="Revert to Saved" enabled="NO" keyEquivalent="r" id="KaW-ft-85H">
                                             <connections>
-                                                <action selector="revertDocumentToSaved:" target="Ady-hI-5gd" id="iJ3-Pv-kwq"/>
+                                                <action selector="fileRevertToSaved:" target="Ady-hI-5gd" id="cwf-eN-4DF"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="deB-kJ-y9o"/>
@@ -170,6 +170,8 @@ CA
                         <outlet property="openWithEncodingIso88592" destination="TIF-P7-WCY" id="xqt-dA-4PY"/>
                         <outlet property="openWithEncodingUtf8" destination="HNO-sc-lka" id="Xdo-u3-hSe"/>
                         <outlet property="openWithEncodingWindows1250" destination="ceO-pt-k8r" id="14J-EN-qXO"/>
+                        <outlet property="revertToSaved" destination="KaW-ft-85H" id="E5Q-HW-eBl"/>
+                        <outlet property="save" destination="pxx-59-PXV" id="gbg-wT-nb0"/>
                     </connections>
                 </customObject>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
