@@ -48,7 +48,7 @@
 		73A379E821BDB56100E0C967 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73A379EB21BDB56100E0C967 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		73A379ED21BDB56100E0C967 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		73A379EE21BDB56100E0C967 /* SwiftSubtitleEditor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftSubtitleEditor.entitlements; sourceTree = "<group>"; };
+		73A379EE21BDB56100E0C967 /* SubtitleEditor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SubtitleEditor.entitlements; sourceTree = "<group>"; };
 		73A379F321BDB56100E0C967 /* SubtitleEditorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SubtitleEditorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A379F921BDB56200E0C967 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73A37A0221BDBA3400E0C967 /* FileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileViewModel.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 				73A379E821BDB56100E0C967 /* Assets.xcassets */,
 				73A379EA21BDB56100E0C967 /* Main.storyboard */,
 				73A379ED21BDB56100E0C967 /* Info.plist */,
-				73A379EE21BDB56100E0C967 /* SwiftSubtitleEditor.entitlements */,
+				73A379EE21BDB56100E0C967 /* SubtitleEditor.entitlements */,
 				73A37A0221BDBA3400E0C967 /* FileViewModel.swift */,
 				73A37A0421BDBACD00E0C967 /* Item.swift */,
 				73A37A0621BDBAE900E0C967 /* Time.swift */,
